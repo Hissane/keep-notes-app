@@ -26,23 +26,18 @@ const notes = [
   }
 ];
 
-const makeCard = note => {
-  return (
-    `<div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">${note.title}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">${note.createdAt}</h6>
-        <p class="card-text">${note.body.substring(0,100) + (note.body.length > 100 ? "..." : "")}</p>
-        <a href="#" class="btn btn-dark">Check Note</a>
-      </div>
-    </div>`
-  );
-}
-
 $(window).on("load", () => {
   const notesDeck = $("#notes");
-  for (let i = 0; i < notes.length; i++) {
-    const tag = makeCard(notes[i]);
-    notesDeck.append(tag);
-  }
+  notes
+    .map(({ title, body, createdAt }) => (
+      `<div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">${title}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">${createdAt}</h6>
+          <p class="card-text">${body.substring(0,100) + (body.length > 100 ? "..." : "")}</p>
+          <a href="#" class="btn btn-dark">Check Note</a>
+        </div>
+      </div>`
+    ))
+    .forEach(note => notesDeck.append(note))
 });
