@@ -5,6 +5,7 @@ const note = {
 }
 
 $(window).on("load", () => {
-  // Here goes your code
-  console.log(note);
+  $("#note-title").text(note.text);
+  $("#note-body").text(note.body);
+  $("#note-created-at").text(`Created at ${note.createdAt}`);
 });
