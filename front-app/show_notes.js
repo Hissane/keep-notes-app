@@ -39,5 +39,5 @@ $(window).on("load", () => {
         </div>
       </div>`
     ))
-    .forEach(note => notesDeck.append(note))
+    .forEach(note => notesDeck.append(note));
 });
