@@ -27,7 +27,7 @@ const makeCard = note => {
       <div class="card-body">
         <h5 class="card-title">${note.title}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${note.createdAt}</h6>
-        <p class="card-text">${note.body}</p>
+        <p class="card-text">${note.body.substring(0,100)}...</p>
         <a href="#" class="btn btn-dark">Check Note</a>
       </div>
     </div>`
