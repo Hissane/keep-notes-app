@@ -18,6 +18,11 @@ const notes = [
     title: "Docker",
     body: "Docker is a set of coupled software-as-a-service and platform-as-a-service products that use operating-system-level virtualization to develop and deliver software in packages called containers.[clarification needed][6] The software that hosts the containers is called Docker Engine.[7] It was first started in 2013 and is developed by Docker, Inc.[8] The service has both free and premium tiers.",
     createdAt: "2017-04-03"
+  },
+  {
+    title: "Simple Note",
+    body: "Simple note body.",
+    createdAt: "2015-01-10"
   }
 ];
 
@@ -27,7 +32,7 @@ const makeCard = note => {
       <div class="card-body">
         <h5 class="card-title">${note.title}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${note.createdAt}</h6>
-        <p class="card-text">${note.body.substring(0,100)}...</p>
+        <p class="card-text">${note.body.substring(0,100) + (note.body.length > 100 ? "..." : "")}</p>
         <a href="#" class="btn btn-dark">Check Note</a>
       </div>
     </div>`
