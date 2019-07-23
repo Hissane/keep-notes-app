@@ -23,7 +23,7 @@ const notes = [
 
 const makeCard = note => {
   return (
-    `div class="card" style="width: 18rem;">
+    `<div class="card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title">${note.title}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${note.createdAt}</h6>
@@ -33,3 +33,11 @@ const makeCard = note => {
     </div>`
   );
 }
+
+$(window).on("load", () => {
+  const notesDeck = $("#notes");
+  for (let i = 0; i < notes.length; i++) {
+    const tag = makeCard(notes[i]);
+    notesDeck.append(tag);
+  }
+});
